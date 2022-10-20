@@ -15,7 +15,7 @@ tidy <- melt(raw, id = "religion")
 
 head(raw)
 head(tidy)
-
+#editing tidy metadata
 names(tidy) <- c("religion", "income", "n")
 tidy <- melt(raw, id = "religion", 
   variable.name = "income", value.name = "n")
@@ -53,6 +53,7 @@ head(tidy)
 tidy <- dcast(tidy, class + age + gender ~ fate, 
   value.var = "value")
 head(tidy)
+#looking at the survival rate of titanic victims
 titanic$rate <- round(titanic$survived / 
   (titanic$survived + titanic$perished), 2)
 head(tidy)
